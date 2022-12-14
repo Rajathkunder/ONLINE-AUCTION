@@ -1,0 +1,51 @@
+
+<center><h1>welcome {{username}} Bid for your item</h1></center>
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="1">
+<title>Basic Page Structure</title>
+<style>
+    .dd{
+        background-color:lightblue;
+        height:50%;
+    }
+
+</style>
+
+</head>
+<body>
+    <center><b>All auctions</b></center>
+    
+   
+    {% for x in mymembers %}
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    <div class="dd">
+       <h1> Item Title - {{ x.itemname }}</h1>
+       <h2>Base price - {{ x.startprice }}</h2>
+       <h3>Bid price -{{ x.highprice }}</h3>
+       <h3>start time - {{ x.starttime }}</h3>
+       <h3>end time - {{ x.endtime }}</h3>
+       <h3>status - {{ x.status }}</h3>
+       <h3>Bid winner- {{ x.userid }}</h3>
+       <button><a href="bid/{{x.id}}&{{username}}">Bid</a></button>
+       
+    </div>
+    {% endfor %}
+</body>
+</html>
+

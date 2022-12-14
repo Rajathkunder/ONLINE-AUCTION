@@ -1,0 +1,31 @@
+
+<head>
+    <style>
+    
+    </style
+</head>
+<body>
+<div>
+<h1>UPDATE ITEM DETAILS</h1>
+
+<form action="updaterecord/{{ mymember.id }}" method="post">
+{% csrf_token %}
+<label for="fname">Item Name</label>
+    <input type="text" id="fname" name="itemname" placeholder="Your name.." required value="{{ mymember.itemname }}"><br><br>
+
+    <label for="lname">Start Price</label>
+    <input type="number" id="lname" name="startprice" placeholder="Your last name.." required value="{{ mymember.startprice }}"><br><br>
+    <label for="lname">Start Time</label>
+    <input type="time" id="time1"  value="{{ mymember.starttime }}" name="stime" ><br><br>
+    <label for="lname">End Time</label>
+    <input type="time" id="time1" name="etime" required value="{{ mymember.endtime }}"><br><br>
+    <label for="">Status of auction</label>
+    <select name="status" >
+        <option value="Active">Active</option>
+        <option value="Completed">Completed</option></select><br><br>
+
+<input type="submit" value="Submit" class='cancelbtn'>
+
+</form>
+</div>
+</body>

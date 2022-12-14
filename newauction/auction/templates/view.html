@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="10">
+<title>Basic Page Structure</title>
+<style>
+    .dd{
+        background-color:lightblue;
+        height:50%;
+    }
+.can{
+    background-color:blue;
+    color:white;
+
+}
+</style>
+
+</head>
+<body>
+    <center><h1><b>All auctions</b></h1></center>
+    
+   
+    {% for x in mymembers %}
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    <div class="dd">
+
+       <h1> ITEM NAME - {{ x.itemname }}</h1>
+       <h2>BASE PRICE - {{ x.startprice }}</h2>
+       <h3>BID PRICE -{{ x.highprice }}</h3>
+       <h3>START TIME - {{ x.starttime }}</h3>
+       <h3>END TIME - {{ x.endtime }}</h3>
+       <h3>STATUS - {{ x.status }}</h3>
+       <h3>BID WINNER- {{ x.userid }}</h3><button style="color:white;" class="can"><a href="delete/{{ x.id }}" class="can">DELETE</a></button>
+       <button style="color:white;" class="can"><a href="update/{{ x.id }}" class="can">UPDATE</a></button>
+
+    </div>
+    {% endfor %}
+</body>
+</html>

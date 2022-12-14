@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Basic Page Structure</title>
+<style>
+    .dd{
+        background-color:lightblue;
+        height:50%;
+    }
+
+</style>
+
+</head>
+<body>
+    <form action="placebid/{{mymember.id}}&{{ mymember.itemname }}&{{mymember.highprice}}&{{username}}" method="post">
+        {% csrf_token %}
+    <center><b>place bid {{username}}</b></center>
+    
+
+
+    <div class="dd">
+       <h1> Item Title - {{ mymember.itemname }}</h1>
+       <h2>Base price - {{ mymember.startprice }}</h2>
+       <h3>Bid price -{{ mymember.highprice }}</h3>
+       <h3>Highest Bidder- {{ mymember.userid }}</h3>
+       <label>Enter your bid price</label><input type="number" name="bid" required>
+       
+      
+       
+    </div>
+    <input type="submit" value="Make bid" >
+
+</form>
+<a href="userpage/">back</a>
+</body>
+</html>
